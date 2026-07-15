@@ -63,3 +63,13 @@ contenedoresSeccion.forEach(contenedor => {
     });
 });
 // </CLICK FUERA DEL POPUP CIERRA>
+
+// <RANDOMIZAR_SPAWN_AUTOS>
+// Busca todos los autos de la escena
+const autos = document.querySelectorAll('.auto');
+
+// A cada uno le asigna un retraso aleatorio antes de empezar su animación
+autos.forEach(auto => {
+    auto.style.animationDelay = 2 + Math.random() * 8 + 's';
+});
+// </RANDOMIZAR_SPAWN_AUTOS>
