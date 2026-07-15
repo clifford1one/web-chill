@@ -1,0 +1,152 @@
+/*
+DISPLAY — qué tipo de caja es / si existe
+
+none          no existe, no ocupa espacio, no se ve, no recibe eventos
+block         ocupa todo el ancho disponible, salto de línea antes/después   (div, p)
+inline        solo el ancho de su contenido, no acepta width/height          (span, a)
+inline-block  como inline, pero SÍ acepta width/height
+flex          organiza a sus hijos en fila/columna (justify-content, align-items, gap)
+grid          organiza a sus hijos en filas y columnas (como flex pero 2D)
+
+
+POSITION — dónde se ubica esa caja
+
+static    (default) sigue el flujo normal, top/left no hacen nada
+relative  sigue el flujo normal, pero top/left lo corren desde su lugar original.
+          además sirve de "ancla" para hijos con position:absolute
+absolute  se saca del flujo, se posiciona respecto al ancestro posicionado
+          más cercano (relative/absolute/fixed). Si no hay ninguno, respecto al body
+fixed     se saca del flujo, se posiciona respecto a la PANTALLA (viewport),
+          no se mueve con el scroll
+sticky    relative hasta cierto punto de scroll, luego se pega como fixed
+*/
+
+
+.contenedor-general {
+    position: relative;
+    inset: 0;
+    /* z-index: -1; */
+    /* le digo que siempre que cambie su w o h, el otro valor sea proporcional */
+    aspect-ratio: 2/1;
+    width: 90vw;
+}
+
+
+.contenedor-seccion {
+    /* comienza siendo invisible */
+    display: none;
+    background: rgba(20, 20, 200, 0.8);
+    position: fixed;
+    /* darle la misma separacion a sus 4 lados */
+    inset: 0;
+
+}
+
+/* esta clase cambia las propiedades de la clase contenedor-seccion cuando ya se está mostrando */
+.contenedor-seccion.mostrar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.seccion {
+    background: rgba(200, 20, 200, 0.3);
+    width: 60vw;
+    height: 90vh;
+    /* bottom: 0%; */
+    position: relative;
+
+}
+
+.cerrar {
+    border: none;
+    background: none;
+    position: absolute;
+    top: 1vh;
+    right: 1vw;
+}
+
+.mueble {
+    background: yellow;
+    position: absolute;
+    width: 20%;
+}
+
+#mueble-mesa {
+    top: 60%;
+    left: 70%;
+}
+
+.pertenencia {
+    position: absolute;
+    /* width: 10vw;
+    height: 10vh; */
+    /* inset: 1vw; */
+    background: rgba(80,100,200,0.6);;
+    /* gap: 10px; */
+
+    transition: 0.15s;
+
+}
+
+.pertenencia:hover {
+    transform: scale(1.1);
+}
+
+#pertenencia-cooler {
+    width: 15vw;
+    /* height: 10vh; */
+    top: 20%;
+    left: 30%;
+}
+
+#pertenencia-guy {
+    width: 20vw;
+
+    top: 40%;
+    left: 50%;
+}
+
+#pertenencia-music {
+    width: 5vw;
+    top: 10%;
+    left: 10%;
+}
+
+#pertenencia-gameboy {
+    width: 5vw;
+
+    top: 20%;
+    left: 60%;
+}
+
+#gameboy-fullscreen{
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60vw;
+    image-rendering: pixelated;
+}
+
+#juegos-gameboy{
+   position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* transform: scale(0.8); */
+}
+
+/* esto es el contenido del popup de about */
+/* contenedor-principal > contenedor-seccion > seccion > contenido-guy */
+#contenido-guy{
+display:flex;
+justify-content: space-between;
+align-items:top;
+margin-left: 5vw;
+margin-right: 5vw;
+}
+
+#imagen-about{
+    width:20%;
+}

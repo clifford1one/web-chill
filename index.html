@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Clifford1one</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/p5@2.3.0/lib/p5.js"></script>
+    <script src="sketches/new-serHumano.js"></script>
+</head>
+
+<body>
+    <!-- contenedor mas grande -->
+    <div class="contendor-principal">
+        <!-- contenedor del sketch  -->
+        <div class="contenedor-general" id="contenedor-sketch">
+            <div class="pertenencia" id="pertenencia-cooler" data-target="cooler">
+                <p>cooler</p>
+            </div>
+            <div class="pertenencia" id="pertenencia-guy" data-target="guy">
+                <p>chill guy</p>
+            </div>
+            <div class="mueble" id="mueble-mesa">
+                <h1>MESA</h1>
+                <div class="pertenencia" id="pertenencia-music" data-target="music">
+                    <p>music</p>
+                </div>
+                <div class="pertenencia" id="pertenencia-gameboy" data-target="gameboy">
+                    <p>gameboy</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- contenedor general de proyectos, inicia oculto  -->
+        <div class="contenedor-seccion" id="contenedor-cooler">
+            <!-- contenedor pop-up de projects-->
+            <div class="seccion" id="seccion-projects">
+                <button class="cerrar">x</button>
+                <h1>COOLER</h1>
+            </div>
+        </div>
+
+        <!-- ESTOS SON TODOS LOS CONTENEDORES QUE NO SE VEN AL INICIO -->
+        <!-- contenedor general del about, inicia oculto  -->
+        <div class="contenedor-seccion" id="contenedor-guy">
+            <!-- contenedor pop-up de about-->
+            <div class="seccion" id="seccion-guy">
+                <button class="cerrar">x</button>
+                <h1>CHILL GUY</h1>
+                <div id="contenido-guy"> 
+
+                <div id="stats-guy">
+                    <p>nombre</p>
+                    <p>skills</p>
+                    <p>completo</p>
+                    <p>pais</p>
+                    <p>nombre</p>
+                    <p>nombre</p>
+                    <p>nombre</p>
+                </div>
+                <!-- <div> -->
+                    <img src="assets/img/chill-condorito.png" id="imagen-about">
+                <!-- </div> -->
+                 </div>
+            </div>
+        </div>
+
+        <!-- contenedor general de musica, inicia oculto  -->
+        <div class="contenedor-seccion" id="contenedor-music">
+            <!-- contenedor pop-up de musica-->
+            <div class="seccion" id="seccion-music">
+                <button class="cerrar">x</button>
+                <h1>MUSICA</h1>
+            </div>
+        </div>
+
+        <!-- contenedor general de gameboy, inicia oculto  -->
+        <div class="contenedor-seccion" id="contenedor-gameboy">
+            <!-- contenedor pop-up de gameboy-->
+            <div class="seccion" id="seccion-gameboy">
+                <button class="cerrar">x</button>
+                <h1>GAMEBOY</h1>
+                <div id="juegos-gameboy"></div>
+                <img src="assets/img/chill-gb-fullscreen-2.png" id="gameboy-fullscreen">
+            </div>
+        </div>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
